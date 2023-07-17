@@ -6,12 +6,11 @@ import { Filter } from '../Filter/Filter';
 import { ContactList } from '../ContactList/ContactList';
 
 export function App() {
-  const [contacts, setContacts] = useState(readFromLocalstoredg());
+  const [contacts, setContacts] = useState(() => readFromLocalstoredg());
   const [filter, setFilter] = useState('');
 
   function readFromLocalstoredg() {
-    const localContacts = JSON.parse(localStorage.getItem('thisStat'));
-    return localContacts ? JSON.parse(localStorage.getItem('thisStat')) : [];
+    return JSON.parse(localStorage.getItem('thisStat')) ?? [];
   }
 
   useEffect(() => {
