@@ -11,11 +11,7 @@ export function App() {
 
   function readFromLocalstoredg() {
     const localContacts = JSON.parse(localStorage.getItem('thisStat'));
-    if (localContacts) {
-      return JSON.parse(localStorage.getItem('thisStat'));
-    } else {
-      return [];
-    }
+    return localContacts ? JSON.parse(localStorage.getItem('thisStat')) : [];
   }
 
   useEffect(() => {

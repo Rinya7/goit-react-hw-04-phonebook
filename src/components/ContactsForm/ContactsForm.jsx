@@ -7,7 +7,6 @@ export function ContactsForm({ onSubmitForm }) {
   const [number, setNamber] = useState('');
 
   const handleChange = evt => {
-    //console.log(evt);
     const { name, value } = evt.currentTarget;
     switch (name) {
       case 'name':
